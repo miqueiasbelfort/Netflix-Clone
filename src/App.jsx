@@ -80,6 +80,19 @@ function App() {
         ))}
 
       </section>
+
+      <footer>
+        Made with <span role="img" aria-label="coração">❤️</span>by Miqueias Belfort <br />
+        Netflix Clone <br />
+        <a href="https://www.instagram.com/miqueiasbelfort/">Instagram</a> <br />
+        <a href="https://www.linkedin.com/in/miqueias-belfort-6209ba209/">Linkedin</a>
+      </footer>
+
+      {movieList.length <= 0 &&
+        <div className='loading'>
+            <img src="//external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fstatic.demilked.com%2Fwp-content%2Fuploads%2F2016%2F06%2Fgif-animations-replace-loading-screen-10.gif&f=1&nofb=1" alt="Loading Netflix" />
+        </div>
+      }
     </div>
   )
 }

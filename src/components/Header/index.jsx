@@ -9,7 +9,7 @@ export default ({black}) => {
             </div>
             <div className="header--user">
                 <a href="/">
-                    <img src="https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdh_400x400.png" alt="User" />
+                    <img src="//external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2F-EqMjbgINU48%2FAAAAAAAAAAI%2FAAAAAAAAAAA%2FHCxYRoomBxs%2Fs900-c-k-no%2Fphoto.jpg&f=1&nofb=1" alt="User" />
                 </a>
             </div>
         </header>
