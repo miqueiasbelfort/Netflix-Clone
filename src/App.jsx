@@ -3,12 +3,16 @@ import Tmdb from './Tmdb'
 import MovieRow from './components/MovieRow'
 import './App.css'
 import FeatureMovie from './components/FeatureMovie'
+import Header from './components/Header' //./components/Header/index.jsx
 
 function App() {
 
   //Salvar a list para ser exibida
   const [movieList, setMovieList] = useState([])
   const [featuredData, setFeaturedData] = useState(null)
+
+  //Monitorar o hander da página 
+  const [blackHeander, setBlackHeader] = useState(false)
 
   //Quando a tela for carregado vai ser execultado essa função
   useEffect(() => {
@@ -41,8 +45,29 @@ function App() {
     loadAll() //Rodando a função
   }, []);
 
+
+  //Monitorar o scroll
+  useEffect(() => {
+    const scrollLister = () => {
+      if(window.scrollY > 15){
+        setBlackHeader(true)
+      } else {
+        setBlackHeader(false)
+      }
+    }
+
+    //Add o scrollLister quando tiver alguma ação de scroll
+    window.addEventListener('scroll', scrollLister)
+
+    //Remover o scrollLister quando o scroll parar
+    return () => {
+      window.removeEventListener("scroll", scrollLister)
+    }
+  }, [])
+
   return (
     <div className="page">
+      <Header black={blackHeander}/>
 
       { featuredData && 
         <FeatureMovie item={featuredData}/>
